@@ -6,14 +6,15 @@ from library.models import Book, Author
 class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = (
-            'title',
-            'author',
-            'yearOfRel',
-            'genre',
-            'category',
-            'publisher'
-        )
+        fields = '__all__'
+        # fields = (
+        #     'title',
+        #     'author',
+        #     'yearOfRel',
+        #     'genre',
+        #     'category',
+        #     'publisher'
+        # )
 
 
 class AuthorSerializer(serializers.ModelSerializer):

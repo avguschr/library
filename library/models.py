@@ -64,12 +64,12 @@ class Book(models.Model):
 
     photoPreview = models.ImageField(validators=[validate_image], upload_to='cover', verbose_name='Изображения',
                                      blank=False, null=True)
-    bookFile = models.FileField(upload_to='books', verbose_name='Файл с книгой', blank=False, null=True)
+    bookFile = models.FileField(upload_to='static/books', verbose_name='Файл с книгой', blank=False, null=True)
 
     def __str__(self):
         return self.title
 
     class Meta:
-        unique_together = ('title', 'author', 'yearOfRel', 'publisher')
+        unique_together = ('title', 'author', 'yearOfRel', 'publisher', 'category')
         verbose_name = 'Книга'
         verbose_name_plural = 'Книги'
